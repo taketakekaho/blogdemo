@@ -1,25 +1,13 @@
-<!DOCTYPE html>
-<html lang="ja-jp">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>MicroBlog</title>
-</head>
-<body>
-    <h1>MicroBlog</h1>
-    <div>
-        <!-- ここにデータ入れる -->
-        {# {%  %} 　プログラム的な命令：消える #}
-        {# {{  }}　値を表示する：表示される #}
-        {% for blog in object_list %}
-            <div>
-            {{ blog.content }}
-            {{ blog.posted_date }}
-            <br />
-            </div>
-        {% endfor %}
-
-    </div>
-</body>
-</html>
+{% extends "base.html" %}
+{% block body %}
+    <!-- ここにデータ入れる -->
+    {# {%  %} 　プログラム的な命令：消える #}
+    {# {{  }}　値を表示する：表示される #}
+    {% for blog in object_list %}
+        <div>
+        {{ blog.content }}
+        {{ blog.posted_date }}
+        <br />
+        </div>
+    {% endfor %}
+{% endblock %}
